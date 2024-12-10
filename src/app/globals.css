@@ -2,26 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: GeistMonoVF;
+  src: url(./fonts/GeistMonoVF.woff);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: GeistMonoVF, Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 235 0% 96.15%;
+    --foreground: 0 0% 17.65%;
+    --muted: 235 0% 100%;
+    --muted-foreground: 250 5.5% 42.75%;
+    --popover: 235 0% 100%;
+    --popover-foreground: 0 0% 17.65%;
+    --card: 235 0% 100%;
+    --card-foreground: 0 0% 17.65%;
+    --border: 235 0% 63.08%;
+    --input: 0 0% 63.14%;
+    --primary: 114.81 100% 84.12%;
+    --primary-foreground: 0 0% 17.65%;
+    --secondary: 187.41 100% 84.12%;
+    --secondary-foreground: 0 0% 17.65%;
+    --accent: 64.44 100% 84.12%;
+    --accent-foreground: 0 0% 17.65%;
+    --destructive: 347.53 100% 60.42%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 186.94 100% 52.55%;
+    --chart-1: 114.81 100% 84.12%;
+    --chart-2: 187.41 100% 84.12%;
+    --chart-3: 64.44 100% 84.12%;
+    --chart-4: 187.41 100% 87.12%;
+    --chart-5: 114.81 103% 84.12%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 90%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 85%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 85%;
+    --border: 0 0% 30%;
+    --input: 0 0% 25%;
+    --primary: 114.81 100% 70%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 187.41 100% 70%;
+    --secondary-foreground: 0 0% 10%;
+    --accent: 64.44 100% 70%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 347.53 100% 60%;
+    --destructive-foreground: 0 0% 90%;
+    --ring: 186.94 100% 40%;
+    --chart-1: 114.81 100% 70%;
+    --chart-2: 187.41 100% 70%;
+    --chart-3: 64.44 100% 70%;
+    --chart-4: 187.41 100% 73%;
+    --chart-5: 114.81 103% 70%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
